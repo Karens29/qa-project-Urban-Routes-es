@@ -1,0 +1,115 @@
+# PROYECTO SPRINT 9 - AUTOMATIZACIÓN UI
+## Automatización de pruebas con Selenium para "Urban Routes"
+
+Este proyecto tiene como objetivo automatizar el flujo completo de solicitud de un viaje en la aplicación web Urban Routes, validando el comportamiento de la interfaz de usuario durante el proceso de reserva.
+
+Se implementó una prueba end-to-end que simula el recorrido real de un usuario, desde la selección de ruta hasta la confirmación del viaje, incluyendo validaciones de elementos dinámicos como modales, formularios y opciones adicionales.
+
+Las pruebas fueron desarrolladas utilizando Python, Selenium WebDriver y Pytest, aplicando el patrón Page Object Model para mejorar la organización del código y su mantenimiento.
+
+---
+
+## Tecnologías usadas
+- Python
+- Selenium WebDriver
+- Pytest
+- PyCharm (IDE)
+- Git y GitHub
+- ChromeDriver
+
+## Estructura del proyecto
+
+- test_main.py -> Contiene el test automatizado principal y la clase Page Object.
+
+- data.py -> Contiene datos de prueba como direcciones, teléfono, tarjeta y mensajes.
+
+- helpers.py -> Contiene método para recuperar un codigo de verificación.
+
+- Readme.md -> Contiene la documentación del proyecto.
+
+- .gitignore -> Archivos excluidos del repositorio.
+
+- venv -> Entorno virtual del proyecto.
+
+## Instalación
+Instalar librerias pytest y requests:
+```sh
+pip3 install selenium
+pip3 install pytest
+```
+
+o instalar desde requests.txt
+```sh
+pip3 install -r requirements.txt
+```
+
+## Ejecución de pruebas
+Para ejecutar todas las pruebas:
+```sh
+pytest test_main.py
+```
+Para ejecutar con información detallada:
+```sh
+pytest -s
+```
+
+## Flujo de pruebas automatizadas
+Se automatizó el flujo completo de solicitud de un viaje:
+
+1. Definición de ruta
+
+    - Ingreso de dirección de origen
+    - Ingreso de dirección de destino
+    - Validación de datos ingresados
+
+2. Selección de tarifa
+
+    - Selección de la tarifa “Comfort”
+
+3. Registro de teléfono
+
+    - Apertura del modal de teléfono
+    - Ingreso del número telefónico
+    - Confirmación mediante código SMS
+
+4. Método de pago
+
+    - Apertura del método de pago
+    - Selección de agregar tarjeta
+    - Ingreso de número de tarjeta y CVV
+    - Confirmación del método de pago
+
+5. Mensaje al conductor
+
+    - Ingreso de mensaje personalizado para el conductor
+
+6. Opciones adicionales
+
+    - Activación de “Manta y pañuelos”
+    - Selección de helados adicionales
+
+7. Confirmación de viaje
+
+    - Envío de la solicitud de viaje
+
+---
+
+#### Análisis
+
+Las pruebas permiten verificar:
+
+* Funcionamiento correcto del flujo completo de solicitud de viaje.
+* Interacción con elementos dinámicos de la interfaz.
+* Manejo de modales y formularios múltiples.
+* Sincronización de elementos mediante esperas explícitas.
+* Estabilidad del flujo end-to-end del usuario.
+
+---
+
+### Conclusión
+
+El proyecto implementa pruebas automatizadas que validan el flujo completo de solicitud de un viaje en la aplicación Urban Routes.
+
+Se cubre un escenario end-to-end que simula el comportamiento real de un usuario, permitiendo detectar fallos en la interacción con la interfaz, sincronización de elementos y validación de formularios.
+
+La automatización mejora la repetibilidad de las pruebas y permite detectar regresiones en la funcionalidad principal de la aplicación.
